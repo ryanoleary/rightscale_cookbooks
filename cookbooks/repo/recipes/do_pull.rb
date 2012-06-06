@@ -17,4 +17,7 @@ repo "default" do
   action      node[:repo][:default][:perform_action].to_sym
 end
 
+# Tagging server with app revision
+app_tag_revision
+
 rightscale_marker :end
