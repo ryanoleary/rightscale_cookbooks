@@ -16,7 +16,4 @@ app "default" do
   action :code_update
 end
 
-log "  Updating app revision tag on server"
-app_tag_revision
-
 rightscale_marker :end
