@@ -16,4 +16,6 @@ app "default" do
   action :code_update
 end
 
+app_tag_revision
+
 rightscale_marker :end
