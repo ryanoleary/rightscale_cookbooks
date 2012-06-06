@@ -55,6 +55,9 @@ action :pull do
     end
   end
 
+  log "  Setting revision tag on server"
+  app_tag_revision
+
   log "  GIT repository update/download action - finished successfully!"
 end
 
