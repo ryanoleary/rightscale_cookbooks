@@ -9,7 +9,7 @@
 #
 # @param revision_name(String):: The name of the revision that will be set on the tag
 define :app_tag_revision, :revision_name => 'unknown' do
-  revision_name = params[:revision]
+  revision_name = params[:revision_name]
   
   # Set the revision tag of the server
   revision_tag = "appserver:app_revision=#{revision_name}"
