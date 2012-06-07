@@ -45,6 +45,11 @@ action :pull do
     action svn_action
   end
 
+  log "  Setting revision tag on server"
+  app_tag_revision "tag app revision" do
+    revision_name branch_tag
+  end
+
   log "  SVN repository update/download action - finished successfully!"
 
 end
@@ -81,6 +86,11 @@ action :capistrano_pull do
     symlinks symlinks
     environment environment
     scm_provider scm_provider
+  end
+
+  log "  Setting revision tag on server"
+  app_tag_revision "tag app revision" do
+    revision_name revision
   end
 
  log "  Capistrano SVN deployment action - finished successfully!"

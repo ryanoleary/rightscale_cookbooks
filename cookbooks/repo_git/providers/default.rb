@@ -56,7 +56,9 @@ action :pull do
   end
 
   log "  Setting revision tag on server"
-  app_tag_revision
+  app_tag_revision "tag app revision" do
+    revision_name revision
+  end
 
   log "  GIT repository update/download action - finished successfully!"
 end
@@ -102,6 +104,11 @@ action :capistrano_pull do
     block do
       RightScale::Repo::Ssh_key.new.delete
     end
+  end
+
+  log "  Setting revision tag on server"
+  app_tag_revision "tag app revision" do
+    revision_name revision
   end
 
   log "  Capistrano GIT deployment action - finished successfully!"

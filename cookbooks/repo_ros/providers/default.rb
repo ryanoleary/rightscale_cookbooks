@@ -43,6 +43,11 @@ action :pull do
     only_if do (new_resource.unpack_source == true) end
   end
 
+  log "  Setting container/source tag on server"
+  app_tag_revision "tag app container/source" do
+    revision_name "#{new_resource.container}-#{new_resource.prefix}"
+  end
+
   log "  ROS repo pull action - finished successfully!"
 end
 
@@ -140,6 +145,11 @@ action :capistrano_pull do
   directory "#{repo_dir}/capistrano_repo/current/.git/" do
     recursive true
     action :delete
+  end
+
+  log "  Setting container/source tag on server"
+  app_tag_revision "tag app container/source" do
+    revision_name "#{new_resource.container}-#{new_resource.prefix}"
   end
 
   log "  Capistrano ROS deployment action - finished successfully!"
