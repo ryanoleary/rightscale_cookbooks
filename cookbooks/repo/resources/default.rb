@@ -9,7 +9,6 @@
 
 actions :pull
 actions :capistrano_pull
-actions :app_tag_revision
 
 
 # Common attributes
