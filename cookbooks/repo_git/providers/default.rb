@@ -27,10 +27,10 @@ action :pull do
   raise "  ERROR: repo URL input is unset. Please fill 'Repository Url' input" if repository_url.empty?
 
   # If repository already exists, just update it
-  if ::File.directory?("#{destination}/.git")
-    log "  Git project repository already exists, updating to latest revision"
-    git_action = :checkout
-  else
+#  if ::File.directory?("#{destination}/.git")
+#    log "  Git project repository already exists, updating to latest revision"
+#    git_action = :checkout
+#  else
     ruby_block "Backup of existing project directory" do
       only_if do ::File.directory?(destination) end
       block do
@@ -39,7 +39,7 @@ action :pull do
     end
     log "  Downloading new Git project repository"
     git_action = :sync
-  end
+#  end
 
   git "#{destination}" do
     repository repository_url
