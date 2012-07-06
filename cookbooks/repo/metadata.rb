@@ -13,20 +13,21 @@ depends "rightscale"
 depends "repo_svn"
 depends "repo_git"
 depends "repo_ros"
+depends "repo_url"
 
 recipe  "repo::default", "Default recipe to setup provided resources."
 
 attribute "repo/default/provider",
   :display_name => "Repository Provider",
-  :description => "Specify where the application code should be checked out from. Select 'repo_git' for Git, 'repo_svn' for SVN or 'repo_ros' for Remote Object Store. Example: repo_git",
+  :description => "Specify where the application code should be checked out from. Select 'repo_git' for Git, 'repo_svn' for SVN, 'repo_ros' for Remote Object Store, or 'repo_url' for simple file download. Example: repo_git",
   :required => "recommended",
-  :choice => ["repo_git", "repo_svn", "repo_ros"],
+  :choice => ["repo_git", "repo_svn", "repo_ros", "repo_url"],
   :default => "repo_git",
   :recipes => ["repo::default"]
 
 attribute "repo/default/repository",
   :display_name => "Repository URL",
-  :description => "The URL that points to the location of the repository that contains the application code. Specify a read-only URL. Example: http://mysvn.net/app/ or git://github.com/username/myapp.git",
+  :description => "The URL that points to the location of the repository that contains the application code. Specify a read-only URL. Example: http://mysvn.net/app/ or git://github.com/username/myapp.git. For the repo_url download, specify the URL of the file to download.",
   :required => "recommended",
   :recipes => ["repo::default"]
 
