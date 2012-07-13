@@ -127,6 +127,9 @@ add_action :generate_dump_file
 # == restore db from dump file
 add_action :restore_from_dump_file
 
+# == create blank database
+add_action :create_blank_database
+
 # == Pre-backup Check
 # Verify the database is in a good state for taking a snapshot.
 #

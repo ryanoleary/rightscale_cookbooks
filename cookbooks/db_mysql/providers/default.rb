@@ -661,3 +661,29 @@ action :restore_from_dump_file do
   end
 
 end
+
+action :create_blank_database do
+
+  db_name   = new_resource.db_name
+  db_check  = `mysql -e "SHOW DATABASES LIKE '#{db_name}'"`
+
+  log "  Check id DB already exists"
+  ruby_block "checking existing db" do
+    block do
+      if ! db_check.empty?
+        Chef::Log.warn "  WARNING: database '#{db_name}' already exists. Not creating new database."
+      end
+    end
+  end
+  
+  bash "Create blank database" do
+    only_if { db_check.empty? }
+    user "root"
+    flags "-ex"
+    code <<-EOH
+      mysqladmin -u root create #{db_name} 
+    EOH
+  end
+
+end
+
