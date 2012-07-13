@@ -144,7 +144,7 @@
         "db::do_dump_import",
         "db::do_dump_export",
         "db::do_dump_schedule_enable",
-        "db::create_blank_database"
+        "db::do_create_blank_database"
       ],
       "description": "Enter the name of the database name/schema to create/restore a dump from/for. Ex: mydbschema",
       "display_name": "Database Schema Name"

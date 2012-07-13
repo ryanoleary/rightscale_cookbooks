@@ -295,7 +295,7 @@ attribute "db/dump/database_name",
   :display_name => "Database Schema Name",
   :description => "Enter the name of the database name/schema to create/restore a dump from/for. Ex: mydbschema",
   :required => "required",
-  :recipes => [ "db::do_dump_import", "db::do_dump_export", "db::do_dump_schedule_enable", "db::create_blank_database" ]
+  :recipes => [ "db::do_dump_import", "db::do_dump_export", "db::do_dump_schedule_enable", "db::do_create_blank_database" ]
 
 attribute "db/terminate_safety",
   :display_name => "Terminate Safety",
