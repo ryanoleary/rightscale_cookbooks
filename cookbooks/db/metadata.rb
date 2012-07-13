@@ -45,7 +45,7 @@ recipe "db::do_dump_import", "Retrieves a dump file from remote object storage (
 recipe "db::do_dump_schedule_enable", "Schedules the daily run of do_dump_export."
 recipe "db::do_dump_schedule_disable", "Disables the daily run of do_dump_export."
 
-recipe "db::create_blank_database", "Creates a blank database using the schema name input."
+recipe "db::do_create_blank_database", "Creates a blank database using the schema name input."
 
 # == Database Firewall Recipes
 #

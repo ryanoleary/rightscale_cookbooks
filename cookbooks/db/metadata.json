@@ -498,7 +498,6 @@
     },
     "db::setup_monitoring": "Installs the collectd plugin for database monitoring support, which is required to enable monitoring and alerting functionality for your servers.",
     "db::request_appserver_allow": "Sends a request to allow connections from the caller's private IP address to all database servers in the deployment that are tagged with the database:active=true tag. This should be run on an application server before attempting a database connection.",
-    "db::create_blank_database": "Creates a blank database using the schema name input.",
     "db::do_dump_schedule_enable": "Schedules the daily run of do_dump_export.",
     "db::do_dump_export": "Creates a dump file and uploads it to a remote object storage (e.g., Amazon S3 or Rackspace Cloud Files).",
     "db::request_master_deny": "Sends a request to the master database server tagged with rs_dbrepl:master_instance_uuid=<master_instance_uuid> to deny connections from the server's private IP address. This script should be run on a slave when it stops replicating.",
@@ -529,6 +528,7 @@
     "db::do_secondary_init_slave": "Initializes the slave server from the secondary backup location.",
     "db::request_appserver_deny": "Sends a request to deny connections from the caller's private IP address to all database servers in the deployment that are tagged with the database:active=true tag. This should be run on an application server upon decommissioning.",
     "db::do_appservers_deny": "Denies connections from all application servers in the deployment that are tagged with appserver:active=true tag. This script can be run on a database server to deny connections from all application servers in the deployment.",
+    "db::do_create_blank_database": "Creates a blank database using the schema name input.",
     "db::setup_privileges_application": "Adds the username and password for application privileges."
   },
   "groupings": {
