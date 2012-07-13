@@ -17,7 +17,7 @@ else
   db_name      = node[:db][:dump][:database_name]
 
   # Create the blank database
-  db db_name do
+  db node[:db][:data_dir] do
     db_name db_name
     action :create_blank_database
   end
