@@ -30,4 +30,6 @@ while node[:cloud][:public_ips] && node[:cloud][:public_ips][i] do
   i += 1
 end
 
+log " AAAAAAAAAAAAAAHHHHHHHHHHHHH FAIL FAIL FAIL FAIL "
+
 rightscale_marker :end
