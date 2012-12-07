@@ -64,6 +64,7 @@ recipe "db::do_primary_restore_and_become_master", "Restores the database and ta
 recipe "db::do_secondary_restore_and_become_master", "Restores the database from a secondary backup location and tags it as the master database server. Sets DNS. Starts a fresh backup from this master."
 recipe "db::do_primary_init_slave", "Initializes the slave server from the primary backup location."
 recipe "db::do_secondary_init_slave", "Initializes the slave server from the secondary backup location."
+recipe "db::do_register_slave", "Initializes the slave server without performing a restore."
 recipe "db::do_init_slave_at_boot", "Initializes the slave server at boot."
 recipe "db::do_set_dns_slave_private_ip", "Sets the slave DNS record to the private IP."
 recipe "db::do_promote_to_master", "Promotes a replicating slave to master."
